@@ -14,7 +14,6 @@ CAVALRY-V is a comprehensive framework for generating adversarial attacks agains
 ### Key Features
 
 - 🎯 **Universal Generator**: Single framework for both image and video adversarial attacks
-- 🔄 **Three-Stage Training**: Pre-training → Visual Finetuning → Video Finetuning
 - 📊 **Comprehensive Evaluation**: Support for MMBench-Video, MME, and custom datasets
 - ⚡ **Efficient Generation**: Open-source large-scale generator
 - 🛠️ **Easy Integration**: Compatible with VLMEvalKit for standardized evaluation
@@ -232,7 +231,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔧 Customization and Extensions
 
 <details>
-<summary>🛠️ <strong>Adapting to Your Own Datasets</strong></summary>
+<summary>🛠️ <strong>Adapting the Generator to Your Own Datasets</strong></summary>
 
 **For Custom Image Datasets**:
 - The `generate_img.py` script can be easily modified to work with your own datasets
@@ -244,20 +243,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Ensure your video format is supported (MP4 recommended)
 - Adjust the QA JSON format to match your dataset structure
 
-**Training on Custom Data**:
-- The three-stage training pipeline can be adapted for domain-specific adversarial generation
-- Consider your target models and adjust the training objectives accordingly
 
 </details>
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the project.
-
-## 📧 Contact
-
-- **Jiaming Zhang** - [jiaming.zhang@staff.main.ntu.edu.sg](mailto:jiaming.zhang@ntu.edu.sg)
-- **Project Repository** - [https://github.com/jiamingzhang94/CAVALRY-V](https://github.com/jiamingzhang94/CAVALRY-V)
 
 ## 🙏 Acknowledgments
 
