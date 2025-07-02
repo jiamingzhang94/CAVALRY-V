@@ -83,9 +83,6 @@ python generate_video.py \
 - Each instance will automatically skip already processed videos (supported via lines 157-183 in `generate_video.py`)
 - Remove any `.inprogress` files after completion
 
-
-
-
 ### 3. Generate Adversarial Images
 
 ```bash
@@ -100,31 +97,27 @@ python generate_img.py \
 Download MME.tsv from: [OpenCompass](https://opencompass.openxlab.space/utils/VLMEval/MME.tsv)
 
 <details>
-<summary><sub>💡 <strong>Tips for Image Generation</strong></sub></summary>
-<sub>
+<summary>💡 <strong>Tips for Image Generation</strong></summary>
 
 - Image generation is much faster than video generation
-- `--output_dir` is where results are saved - you can easily modify this script to adapt to your own datasets
+- `--output_dir` is where results are saved - you can easily modify this script to adapt to your own datasets  
 - `--output_tsv` generates the TSV file needed for VLMEval evaluation - this is optional if you don't plan to use VLMEval
 
-</sub>
 </details>
 
 ## 📈 Evaluation
 
 ### Setup VLMEvalKit
 
-> <sub>⚠️ **Note**: This step can be somewhat complex and requires careful environment management due to dependency conflicts between different models.</sub>
+> ⚠️ **Note**: This step can be somewhat complex and requires careful environment management due to dependency conflicts between different models.
 
 1. **Configure API Keys**: Set up your evaluation model API keys following [VLMEvalKit documentation](https://github.com/open-compass/VLMEvalKit)
    
    <details>
-   <summary><sub>💡 <strong>Alternative Evaluation Options</strong></sub></summary>
-   <sub>
+   <summary>💡 <strong>Alternative Evaluation Options</strong></summary>
    
    - VLMEvalKit also provides free open-source models as scorers, though they may be slightly less effective than GPT-based evaluators
    
-   </sub>
    </details>
 
 2. **Deploy Target Models**: Install the MLLMs you want to evaluate:
@@ -135,19 +128,19 @@ Download MME.tsv from: [OpenCompass](https://opencompass.openxlab.space/utils/VL
    - MiniCPM-o-2_6
 
    <details>
-   <summary><sub>🔧 <strong>Environment Management Tips</strong></sub></summary>
-   <sub>
+   <summary>🔧 <strong>Environment Management Tips</strong></summary>
    
    **Transformer Version Conflicts**: Different models have conflicting transformer library requirements. Based on our experience:
    - Qwen and InternVL can share the same conda environment
    - Other models (llava_video, Aria, MiniCPM-o) maybe should each have their own separate conda environment
    
-   </sub>
    </details>
 
 3. **Apply Custom Modifications**:
-
-   Copy our custom evaluation files to override original VLMEval folder
+   ```bash
+   # Copy our custom evaluation files to override original VLMEval folder
+   cp -r VLMEvalKit/vlmeval/* /path/to/your/VLMEvalKit/vlmeval/
+   ```
 
 
 4. **Update Configuration Paths**:
@@ -162,8 +155,7 @@ cd VLMEvalKit
 ```
 
 <details>
-<summary><sub>⚠️ <strong>Important Evaluation Guidelines</strong></sub></summary>
-<sub>
+<summary>⚠️ <strong>Important Evaluation Guidelines</strong></summary>
 
 **Best Practices**:
 - **One at a time**: Evaluate only one dataset and one model per run to avoid conflicts
@@ -172,9 +164,6 @@ cd VLMEvalKit
   - `LMUData` directory
 - **Why clean cache**: This prevents the evaluator from reading stale cached data that could cause errors in subsequent evaluations
 
-
-
-</sub>
 </details>
 
 ## 🏗️ Project Structure
@@ -243,8 +232,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔧 Customization and Extensions
 
 <details>
-<summary><sub>🛠️ <strong>Adapting to Your Own Datasets</strong></sub></summary>
-<sub>
+<summary>🛠️ <strong>Adapting to Your Own Datasets</strong></summary>
 
 **For Custom Image Datasets**:
 - The `generate_img.py` script can be easily modified to work with your own datasets
@@ -260,7 +248,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The three-stage training pipeline can be adapted for domain-specific adversarial generation
 - Consider your target models and adjust the training objectives accordingly
 
-</sub>
 </details>
 
 ## 🤝 Contributing
