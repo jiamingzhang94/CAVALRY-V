@@ -14,8 +14,8 @@ CAVALRY-V is a comprehensive framework for generating adversarial attacks agains
 ### Key Features
 
 - 🎯 **Universal Generator**: Single framework for both image and video adversarial attacks
-- 📊 **Comprehensive Evaluation**: Support for MMBench-Video, MME, and custom datasets
 - ⚡ **Efficient Generation**: Open-source large-scale generator
+- 📊 **Comprehensive Evaluation**: Support for MMBench-Video, MME, and custom datasets
 - 🛠️ **Easy Integration**: Compatible with VLMEvalKit for standardized evaluation
 
 ## 🛠️ Installation
@@ -136,10 +136,7 @@ Download MME.tsv from: [OpenCompass](https://opencompass.openxlab.space/utils/VL
    </details>
 
 3. **Apply Custom Modifications**:
-   ```bash
-   # Copy our custom evaluation files to override original VLMEval folder
-   cp -r VLMEvalKit/vlmeval/* /path/to/your/VLMEvalKit/vlmeval/
-   ```
+   Copy our custom evaluation files to override original VLMEval folder
 
 
 4. **Update Configuration Paths**:
